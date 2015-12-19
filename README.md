@@ -44,7 +44,7 @@ array - {C,H,U,T,L,U,L,U};
 
 # Descargas
 
-[Versión Android](https://github.com/Bolito2/Chutlulu/blob/master/Android/chutlulu.apk?raw=true)
+[Versión Android](https://github.com/Bolito2/Chutlulu/blob/master/Android/app/chutlulu.apk?raw=true)
 
 [Versión Java](https://github.com/Bolito2/Chutlulu/blob/master/Java/ChutluluPC.jar?raw=true)
 
