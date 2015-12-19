@@ -1,0 +1,211 @@
+package main;
+
+import java.awt.EventQueue;
+import java.awt.Image;
+
+import javax.swing.JFrame;
+import javax.swing.JTextField;
+import java.awt.BorderLayout;
+import java.awt.TextArea;
+import java.awt.Toolkit;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class main {
+
+	private JFrame frame;
+	private JTextField inputText;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					main window = new main();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public main() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	
+	protected int lepraANumero(char lepra)
+    {
+        switch(lepra)
+        {
+            case ' ' : return 0;
+            case 'a' : return 1;
+            case 'b' : return 2;
+            case 'c' : return 3;
+            case 'd' : return 4;
+            case 'e' : return 5;
+            case 'f' : return 6;
+            case 'g' : return 7;
+            case 'h' : return 8;
+            case 'i' : return 9;
+            case 'j' : return 10;
+            case 'k' : return 11;
+            case 'l' : return 12;
+            case 'm' : return 13;
+            case 'n' : return 14;
+            case 'ñ' : return 15;
+            case 'o' : return 16;
+            case 'p' : return 17;
+            case 'q' : return 18;
+            case 'r' : return 19;
+            case 's' : return 20;
+            case 't' : return 21;
+            case 'u' : return 22;
+            case 'v' : return 23;
+            case 'w' : return 24;
+            case 'x' : return 25;
+            case 'y' : return 26;
+            case 'z' : return 27;
+        }
+        return 0;
+    }
+	
+	protected char numeroALepra(int numero)
+    {
+        switch(numero)
+        {
+            case 0 : return ' ';
+            case 1 : return 'a';
+            case 2 : return 'b';
+            case 3 : return 'c';
+            case 4 : return 'd';
+            case 5 : return 'e';
+            case 6 : return 'f';
+            case 7 : return 'g';
+            case 8 : return 'h';
+            case 9 : return 'i';
+            case 10 : return 'j';
+            case 11 : return 'k';
+            case 12 : return 'l';
+            case 13 : return 'm';
+            case 14 : return 'n';
+            case 15 : return 'ñ';
+            case 16 : return 'o';
+            case 17 : return 'p';
+            case 18 : return 'q';
+            case 19 : return 'r';
+            case 20 : return 's';
+            case 21 : return 't';
+            case 22 : return 'u';
+            case 23 : return 'v';
+            case 24 : return 'w';
+            case 25 : return 'x';
+            case 26 : return 'y';
+            case 27 : return 'z';
+        }
+        return ' ';
+    }
+	
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 450, 300);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		frame.setTitle("CHUTLULU");
+		ImageIcon icon = new ImageIcon("C:/Users/oscar/Documents/Chutlulu/logoCHUT.png");
+	    frame.setIconImage(icon.getImage());
+		
+		inputText = new JTextField();
+		inputText.setBounds(51, 11, 327, 20);
+		frame.getContentPane().add(inputText);
+		inputText.setColumns(10);
+		
+		TextArea resultado = new TextArea();
+		resultado.setBounds(26, 91, 380, 160);
+		frame.getContentPane().add(resultado);
+		
+		System.out.println((char)401);
+		
+		JButton chutANormal = new JButton("Chutlulu a idiomas herejes");
+		chutANormal.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) 
+			{
+				
+				
+				char[] chutlulu = new char[] {'c' , 'h' , 'u','t','l','u','l','u'};
+                char[] mensaje = inputText.getText().toCharArray();
+                int[] mensajeINT = new int[mensaje.length];
+                int contadorCHUT = 0;
+
+                for(int i = 0; i < mensaje.length; i++)
+                {
+                    
+                    mensajeINT[i] = (int) (Math.cos((mensaje.length - (i + 1)) * Math.PI)*3 +lepraANumero(mensaje[i]) + Math.round(Math.log10 (Math.pow(i + 1, 4.0))) + chutlulu[contadorCHUT] *69);
+
+
+                        mensajeINT[i] = mensajeINT[i] % 28;
+                        
+                        if (contadorCHUT == 7) {
+                            contadorCHUT = 0;
+                        } else {
+                            contadorCHUT++;
+                        }
+
+                        mensaje[i] = numeroALepra(mensajeINT[i]);
+                    }
+                resultado.setText(String.valueOf(mensaje));
+			}
+		});
+		chutANormal.setBounds(118, 35, 187, 23);
+		frame.getContentPane().add(chutANormal);
+		
+		JButton normalAChut = new JButton("Idiomas herejes a Chutlulu");
+		normalAChut.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) 
+			{
+				 char[] chutlulu = new char[] {'c' , 'h' , 'u','t','l','u','l','u'};
+	                char[] mensaje = inputText.getText().toCharArray();
+	                int[] mensajeINT = new int[mensaje.length];
+	                int contadorCHUT = 0;
+
+	                for(int i = 0; i < mensaje.length; i++)
+	                {
+	                        mensajeINT[i] =(int) ( - Math.cos(( mensaje.length - (i + 1)) * Math.PI)*3 + lepraANumero(mensaje[i]) - Math.round(Math.log10(Math.pow(i + 1, 4.0))) - chutlulu[contadorCHUT] * 69);
+
+	                        while (mensajeINT[i] < 0) {
+	                            mensajeINT[i] += 28;
+	                        }
+	                    while (mensajeINT[i] > 27) {
+	                        mensajeINT[i] -= 28;
+	                    }
+
+	                       
+	                        if (contadorCHUT == 7) {
+	                            contadorCHUT = 0;
+	                        } else {
+	                            contadorCHUT++;
+	                        }
+	                        
+	                        mensaje[i] = numeroALepra(mensajeINT[i]);
+
+	                }
+	                
+	                resultado.setText(String.valueOf(mensaje));
+			}
+		});
+		normalAChut.setBounds(118, 62, 187, 23);
+		frame.getContentPane().add(normalAChut);
+	}
+}

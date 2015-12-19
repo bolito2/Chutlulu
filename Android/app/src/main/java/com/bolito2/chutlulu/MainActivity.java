@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
         mySound = MediaPlayer.create(this, R.raw.bienvenida);
         chut = MediaPlayer.create(this, R.raw.chut);
@@ -60,12 +61,12 @@ public class MainActivity extends AppCompatActivity {
                     Log.d("log81", String.valueOf(Math.round( Math.log10 (Math.pow(mensaje.length, 4.0)))));
                     mensajeINT[i] = (int) (Math.cos((mensaje.length - (i + 1)) * Math.PI)*3 +lepraANumero(mensaje[i]) + Math.round(Math.log10 (Math.pow(i + 1, 4.0))) + chutlulu[contadorCHUT] *69);
 
-                        while (mensajeINT[i] > 27) {
-                            mensajeINT[i] -= 28;
-                        }
+                    while(mensajeINT[i] > 1032){
+                        mensajeINT[i] -= 1033;
+                    }
 
-                    while (mensajeINT[i] < 0) {
-                        mensajeINT[i] += 28;
+                    while(mensajeINT[i] < 0){
+                        mensajeINT[i] += 1033;
                     }
                         if (contadorCHUT == 7) {
                             contadorCHUT = 0;
@@ -104,11 +105,12 @@ public class MainActivity extends AppCompatActivity {
                 {
                         mensajeINT[i] =(int) ( - Math.cos(( mensaje.length - (i + 1)) * Math.PI)*3 + lepraANumero(mensaje[i]) - Math.round(Math.log10(Math.pow(i + 1, 4.0))) - chutlulu[contadorCHUT] * 69);
 
-                        while (mensajeINT[i] < 0) {
-                            mensajeINT[i] += 28;
-                        }
-                    while (mensajeINT[i] > 27) {
-                        mensajeINT[i] -= 28;
+                    while(mensajeINT[i] > 1032){
+                        mensajeINT[i] -= 1033;
+                    }
+
+                    while(mensajeINT[i] < 0){
+                        mensajeINT[i] += 1033;
                     }
 
                         Log.d("mensaje", String.valueOf(mensajeINT[i]));
@@ -138,74 +140,12 @@ public class MainActivity extends AppCompatActivity {
 
     protected int lepraANumero(char lepra)
     {
-        switch(lepra)
-        {
-            case ' ' : return 0;
-            case 'a' : return 1;
-            case 'b' : return 2;
-            case 'c' : return 3;
-            case 'd' : return 4;
-            case 'e' : return 5;
-            case 'f' : return 6;
-            case 'g' : return 7;
-            case 'h' : return 8;
-            case 'i' : return 9;
-            case 'j' : return 10;
-            case 'k' : return 11;
-            case 'l' : return 12;
-            case 'm' : return 13;
-            case 'n' : return 14;
-            case 'ñ' : return 15;
-            case 'o' : return 16;
-            case 'p' : return 17;
-            case 'q' : return 18;
-            case 'r' : return 19;
-            case 's' : return 20;
-            case 't' : return 21;
-            case 'u' : return 22;
-            case 'v' : return 23;
-            case 'w' : return 24;
-            case 'x' : return 25;
-            case 'y' : return 26;
-            case 'z' : return 27;
-        }
-        return 0;
+        return (int)lepra;
     }
 
     protected char numeroALepra(int numero)
     {
-        switch(numero)
-        {
-            case 0 : return ' ';
-            case 1 : return 'a';
-            case 2 : return 'b';
-            case 3 : return 'c';
-            case 4 : return 'd';
-            case 5 : return 'e';
-            case 6 : return 'f';
-            case 7 : return 'g';
-            case 8 : return 'h';
-            case 9 : return 'i';
-            case 10 : return 'j';
-            case 11 : return 'k';
-            case 12 : return 'l';
-            case 13 : return 'm';
-            case 14 : return 'n';
-            case 15 : return 'ñ';
-            case 16 : return 'o';
-            case 17 : return 'p';
-            case 18 : return 'q';
-            case 19 : return 'r';
-            case 20 : return 's';
-            case 21 : return 't';
-            case 22 : return 'u';
-            case 23 : return 'v';
-            case 24 : return 'w';
-            case 25 : return 'x';
-            case 26 : return 'y';
-            case 27 : return 'z';
-        }
-        return ' ';
+        return (char)numero;
     }
 
     @Override
